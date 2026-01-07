@@ -1,0 +1,427 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>Data4Hope | Data Literacy for Afghan Women</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <style>
+            /* 0. GLOBAL STANDARDS */
+            html { scroll-behavior: smooth; }
+
+            body {
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+                line-height: 1.6;
+                letter-spacing: 0.3px;
+                color: #333;
+            }
+
+            /* Standardized Section Headers */
+            h2.section-header, 
+            h3.section-header {
+                font-size: 1.4rem !important; 
+                font-weight: 800 !important;
+                text-transform: uppercase !important;
+                letter-spacing: 2px !important;
+                color: #000 !important;
+                margin-bottom: 2rem !important;
+                line-height: 1.2;
+            }
+
+            /* Standardized Body Text */
+            p, .initiative-desc, .involved-item p, .credentials-title, .field label {
+                font-size: 1rem !important;
+                line-height: 1.6 !important;
+                margin-bottom: 1.2rem;
+            }
+
+            /* 1. TOP NAVIGATION */
+            .top-nav {
+                position: fixed;
+                top: 25px; 
+                left: 25px; 
+                z-index: 10000;
+                display: flex;
+                gap: 10px;
+            }
+
+            .nav-btn {
+                background: rgba(255, 255, 255, 0.95); 
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                color: #000 !important;
+                padding: 8px 18px;
+                border-radius: 4px;
+                text-decoration: none;
+                font-size: 0.7rem; 
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                transition: all 0.3s ease;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            }
+
+            .nav-btn:hover {
+                background: #ff4d4d;
+                color: #fff !important;
+                border-color: #ff4d4d;
+            }
+
+            /* 2. SHARED LAYOUT */
+            .inner {
+                width: 90% !important;
+                max-width: 1400px !important;
+                margin: 0 auto !important;
+                padding: 6rem 0 !important; 
+            }
+
+            /* COMPACT VIEW FOR PART TWO AND THREE */
+            #program .inner, 
+            #get-involved .inner {
+                padding-top: 2.5rem !important;   
+                padding-bottom: 2.5rem !important; 
+            }
+
+            #program h2.section-header, 
+            #get-involved h2.section-header {
+                margin-bottom: 1rem !important;
+            }
+
+            .silver-bg { background-color: #f8f8f8 !important; }
+
+            /* 3. BANNER / LANDING */
+            .banner.style1 .content {
+                padding-left: 5% !important;
+                justify-content: center;
+            }
+
+            .content h1 {
+                font-size: clamp(4rem, 10vw, 9rem) !important; 
+                font-weight: 900 !important; 
+                line-height: 0.9; 
+                margin-bottom: 1.5rem;
+                letter-spacing: -3px; 
+                color: #000;
+            }
+
+            .highlight { color: #ff4d4d; }
+
+            .major-subtitle {
+                font-size: 1.2rem !important;
+                font-style: italic;
+                color: #555 !important;
+                border-left: 4px solid #ff4d4d;
+                padding-left: 1.5rem;
+                margin-top: 2rem;
+            }
+
+            /* 4. COUNTER OVERLAY */
+            .counter-overlay {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 85%;
+                height: 70%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .counter-days {
+                font-size: clamp(5rem, 12vw, 11rem) !important; 
+                font-weight: 900;
+                color: #ff4d4d; 
+                text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+            }
+
+            .counter-text {
+                font-size: 1.4rem;
+                font-style: italic;
+                color: #fff;
+                max-width: 450px;
+                margin-left: auto;
+                text-align: right;
+                line-height: 1.4;
+            }
+
+            /* 5. DATA4HOPE ITEMS - REMOVED EXTRA LINES */
+            .program-grid section {
+                padding: 1.5rem !important; 
+                border: none !important; 
+                background: transparent !important; 
+                box-shadow: none !important; 
+            }
+            .program-grid section:hover { 
+                border: none !important; 
+                background: transparent !important; 
+            }
+
+            /* 6. GET INVOLVED GRID */
+            .involved-container {
+                display: grid;
+                grid-template-columns: 1fr 1.2fr;
+                gap: 5rem;
+                align-items: start;
+            }
+
+            .involved-item {
+                display: flex;
+                gap: 1.5rem;
+                margin-bottom: 1.5rem; 
+            }
+
+            .involved-item .icon {
+                color: #ff4d4d;
+                font-size: 1.5rem;
+                margin-top: 5px;
+            }
+
+            /* 7. ABOUT US GRID */
+            .about-layout {
+                display: grid;
+                grid-template-columns: 1fr 1.5fr 1fr;
+                gap: 4rem;
+            }
+
+            .journey-title {
+                font-size: 2.2rem !important;
+                text-transform: none !important;
+                letter-spacing: -1px !important;
+                margin-bottom: 2rem !important;
+                line-height: 1.1 !important;
+            }
+
+            .journey-title .small-text {
+                font-size: 0.85rem;
+                letter-spacing: 2px;
+                display: block;
+                text-transform: uppercase;
+                color: #ff4d4d;
+                font-weight: 800;
+                margin: 0.5rem 0;
+            }
+
+            .journey-title strong {
+                display: block;
+                color: #000;
+                font-weight: 900;
+            }
+
+            .photo-container img {
+                width: 180px;
+                height: 180px;
+                border-radius: 50%;
+                border: 5px solid #ff4d4d; 
+                object-fit: cover;
+                margin-bottom: 1.5rem;
+            }
+
+            .credentials-name { font-size: 1.3rem; font-weight: 800; color: #000; margin-bottom: 0.5rem; }
+            
+            .linkedin-link { 
+                font-size: 1.8rem; 
+                color: #0077b5; 
+                transition: color 0.3s;
+            }
+            .linkedin-link:hover { color: #ff4d4d; }
+
+            /* 8. FORMS */
+            .field label { font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.75rem !important; }
+
+            /* RESPONSIVE FIXES */
+            @media screen and (max-width: 1100px) {
+                .about-layout { grid-template-columns: 1fr; gap: 4rem; }
+                .involved-container { grid-template-columns: 1fr; gap: 3rem; }
+                .inner { padding: 4rem 0 !important; }
+                #program .inner, #get-involved .inner { padding: 2rem 0 !important; }
+            }
+        </style>
+    </head>
+    <body class="is-preload">
+
+        <nav class="top-nav">
+            <a href="#wrapper" class="nav-btn">Home</a>
+            <a href="#program" class="nav-btn">Data4Hope</a>
+            <a href="#get-involved" class="nav-btn">Get involved</a>
+            <a href="#about" class="nav-btn">About us</a>
+        </nav>
+
+        <div id="wrapper" class="divided">
+
+            <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+                <div class="content">
+                    <h1>
+                        <span class="highlight">D</span>ata <br /> 
+                        <span class="highlight">4</span> <br /> 
+                        <span class="highlight">H</span>ope
+                    </h1>
+                    <p class="major-subtitle">Empowering Afghan Girls through Data literacy.</p>
+                </div>
+                <div class="image">
+                    <img src="assets/banner.jpg" alt="Advocacy Background" />
+                    <div class="counter-overlay">
+                        <div class="counter-days-container">
+                            <span class="counter-days" id="days-counter">0</span>
+                            <span style="font-size: 2rem; color: #fff; font-weight: 700; margin-left: 10px; text-transform: uppercase;">Days</span>
+                        </div>
+                        <div class="quote-container">
+                            <p class="counter-text">“Since Afghan Girls were Banned From Education”</p>
+                            <p style="font-size: 0.85rem; opacity: 0.7; text-align: right; color:#fff;">14 Aug 2021 — Present</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="wrapper style1 align-center silver-bg" id="program">
+                <div class="inner">
+                    <h2 class="section-header">The Initiative</h2>
+                    <p class="initiative-desc">Bridging the educational gap through high-impact technical empowerment.</p>
+                    <div class="items style1 small onscroll-fade-in program-grid">
+                        <section>
+                            <span class="icon solid style2 major fa-database"></span>
+                            <h3>Data Literacy</h3>
+                            <p>Foundational training in data collection, cleaning, and ethical analysis.</p>
+                        </section>
+                        <section>
+                            <span class="icon solid style2 major fa-desktop"></span>
+                            <h3>Tableau</h3>
+                            <p>Learning how to build a dashboard on Tableau and publish it to Tableau Public.</p>
+                        </section>
+                        <section>
+                            <span class="icon brands style2 major fa-linkedin-in"></span>
+                            <h3>LinkedIn</h3>
+                            <p>Building a professional digital identity for global remote opportunities.</p>
+                        </section>
+                        <section>
+                            <span class="icon solid style2 major fa-network-wired"></span>
+                            <h3>Networking</h3>
+                            <p>Connecting students with mentors and global data professionals.</p>
+                        </section>
+                    </div>
+                </div>
+            </section>
+
+            <section class="wrapper style1 align-left" id="get-involved">
+                <div class="inner">
+                    <div class="involved-container">
+                        <div class="involved-left">
+                            <h2 class="section-header">Every lesson they take is an act of courage.</h2>
+                            <p>Help us turn that courage into a career. We are looking for partners who believe in the power of education to transcend borders.</p>
+                        </div>
+                        <div class="involved-right">
+                            <div class="involved-item">
+                                <span class="icon solid fa-hands-helping"></span>
+                                <div>
+                                    <h3>Sponsor the Program</h3>
+                                    <p>Invest in our mission to empower Afghan women. Your financial support directly funds training cohorts.</p>
+                                </div>
+                            </div>
+                            <div class="involved-item">
+                                <span class="icon solid fa-chalkboard-teacher"></span>
+                                <div>
+                                    <h3>Share Your Expertise</h3>
+                                    <p>Data professionals can support the program by mentoring students or leading specific modules.</p>
+                                </div>
+                            </div>
+                            <div class="involved-item">
+                                <span class="icon solid fa-laptop"></span>
+                                <div>
+                                    <h3>Provide Tools</h3>
+                                    <p>Support the program by providing laptops or software licenses for our students.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="wrapper style1 align-left silver-bg" id="about">
+                <div class="inner">
+                    <div class="about-layout">
+                        <div class="about-col-profile">
+                            <h2 class="journey-title">
+                                <span class="small-text">From</span>
+                                <strong>Taliban Escaping</strong>
+                                <span class="small-text">To</span>
+                                <strong>Tableau Ambassador</strong>
+                            </h2>
+                            <div class="photo-container">
+                                <img src="assets/Tawab.jpg" alt="Tawab Hussainy" />
+                            </div>
+                            <div class="credentials-name">Tawab Hussainy</div>
+                            <p class="credentials-title">
+                                Program Founder & Coach<br>
+                                Tableau Ambassador 2025<br>
+                                Consultant @ The Information Lab
+                            </p>
+                            <a href="https://www.linkedin.com/in/tawab-hussainy/" target="_blank" class="linkedin-link">
+                                <span class="icon brands fa-linkedin"></span>
+                            </a>
+                        </div>
+
+                        <div class="about-col-middle">
+                            <h3 class="section-header">My Story</h3>
+                            <p>My journey began with a forced departure from Afghanistan in September 2021. What started as a search for safety evolved into a mission to empower others. Through the power of the data community, I transformed my career and my life.</p>
+                            <p>Today, I use my platform to bridge the gap for those left behind. Knowledge—amplified by technology—is one of the strongest forces for empowerment. Data4Hope equips Afghan women with the technical skills and confidence to build their own futures.</p>
+                        </div>
+
+                        <div class="about-col-right">
+                            <h3 class="section-header">Contact</h3>
+                            <form action="https://formspree.io/f/xbdlngqk" method="POST">
+                                <div class="fields">
+                                    <div class="field">
+                                        <label for="name">Name</label>
+                                        <input type="text" name="name" id="name" required />
+                                    </div>
+                                    <div class="field">
+                                        <label for="email">Email</label>
+                                        <input type="email" name="email" id="email" required />
+                                    </div>
+                                    <div class="field">
+                                        <label for="message">Message</label>
+                                        <textarea name="message" id="message" rows="3" required></textarea>
+                                    </div>
+                                </div>
+                                <ul class="actions">
+                                    <li><input type="submit" value="Send Message" class="primary small" /></li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="wrapper style1 align-center">
+                <div class="inner"><p>&copy; Data4Hope. All rights reserved.</p></div>
+            </footer>
+        </div>
+
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script>
+            function animateCounter() {
+                const startDate = new Date("August 14, 2021"); 
+                const today = new Date();
+                const timeDiff = today - startDate;
+                const finalValue = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+                const element = document.getElementById("days-counter");
+                const duration = 2500; 
+                const startTimestamp = performance.now();
+                function step(now) {
+                    const progress = Math.min((now - startTimestamp) / duration, 1);
+                    const easedProgress = 1 - Math.pow(1 - progress, 4); 
+                    element.innerText = Math.floor(easedProgress * finalValue);
+                    if (progress < 1) { window.requestAnimationFrame(step); }
+                }
+                window.requestAnimationFrame(step);
+            }
+            window.onload = animateCounter;
+        </script>
+    </body>
+</html>
